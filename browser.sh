@@ -52,6 +52,12 @@ install_chromium() {
             CHROME_CLI="--proxy-server=$SOCKS5_PROXY https://google.com"
         fi
 
+        # RAM configuration (optional)
+        read -p "Enter RAM limit for Chromium (e.g., 512m, 1g, 2g) or press Enter for default (1g): " RAM_LIMIT
+        if [[ -z "$RAM_LIMIT" ]]; then
+            RAM_LIMIT="1g"  # Default RAM limit
+        fi
+
         echo "Installing Chromium..."
         docker run -d \
             --name=chromium \
@@ -65,7 +71,8 @@ install_chromium() {
             -p 3010:3000 \
             -p 3011:3001 \
             -v /root/chromium/config:/config \
-            --shm-size="1gb" \
+            --memory="$RAM_LIMIT" \
+            --shm-size="$RAM_LIMIT" \
             --restart unless-stopped \
             lscr.io/linuxserver/chromium:latest
         echo "------------------------------------------------------------------------------------------------"
@@ -96,6 +103,13 @@ install_firefox() {
         read -p "Enter username for Firefox: " USERNAME
         read -sp "Enter password for Firefox: " PASSWORD
         echo
+
+        # RAM configuration (optional)
+        read -p "Enter RAM limit for Firefox (e.g., 512m, 1g, 2g) or press Enter for default (1g): " RAM_LIMIT
+        if [[ -z "$RAM_LIMIT" ]]; then
+            RAM_LIMIT="1g"  # Default RAM limit
+        fi
+
         echo "Installing Firefox..."
         docker run -d \
             --name=firefox \
@@ -108,7 +122,8 @@ install_firefox() {
             -p 4010:3000 \
             -p 4011:3001 \
             -v /root/firefox/config:/config \
-            --shm-size="1gb" \
+            --memory="$RAM_LIMIT" \
+            --shm-size="$RAM_LIMIT" \
             --restart unless-stopped \
             lscr.io/linuxserver/firefox:latest
         echo "------------------------------------------------------------------------------------------------"
