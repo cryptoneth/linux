@@ -1,4 +1,4 @@
-# Docker Browser Installer
+# Chromium Installer
 
 ![Banner](https://img.shields.io/badge/Made%20by-Crypton-blue.svg)  
 **A simple Bash script to install Chromium and Firefox in Docker containers with customizable options.**
@@ -53,7 +53,7 @@ Select an option:
 
 =================
 
-✨ Option 1: Install Chromium
+# ✨ Option 1: Install Chromium
 Steps:
 
 - Enter a username.
@@ -72,13 +72,13 @@ Result: Chromium runs on http://<your-ip>:3010.
 
 =================
 
-✨ Option 2: Uninstall Chromium
+# ✨ Option 2: Uninstall Chromium
 
 Stops and removes the Chromium container.
 
 =================
 
-Option 3: Install Firefox
+# ✨ Option 3: Install Firefox
 Steps:
 
 -Enter a username.
@@ -91,17 +91,17 @@ Steps:
 
 =================
 
-✨Option 4: Uninstall Firefox
+# ✨ Option 4: Uninstall Firefox
 Stops and removes the Firefox container.
 
 =================
 
-✨Option 5: Exit
+# ✨ Option 5: Exit
 Closes the script.
 
 =================
 
-!!! Notes
+# !!! Notes
  
 Ensure your system has enough RAM if you set high limits.
 
@@ -113,5 +113,5 @@ Run as root or with sudo if Docker requires it.
 
 🚀🚀🚀🚀
 
-Made with  by ***Crypton***
-Follow me on Twitter: @0xCrypton_
+# Made with  by ***Crypton***
+# Follow me on Twitter: @0xCrypton_
